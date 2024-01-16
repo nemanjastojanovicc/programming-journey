@@ -1,0 +1,63 @@
+---
+import dateFormat from "@lib/utils/dateFormat";
+import { humanize, slugify } from "@lib/utils/textConverter";
+import { BiCalendarEdit, BiCategoryAlt } from "react-icons/bi/index.js";
+import Tags from "./components/Tags.astro";
+
+const { className, posts } = Astro.props;
+---
+
+<div class={`grid grid-cols-1 max-w-8xl px-8 gap-4 mx-auto lg:max-w-7xl ${className} ${posts.length == 1 ? "justify-center" : ""} `}>
+  {
+    posts.map((post: any) => (
+      <div class="w-full grid grid-cols-5 gap-8">
+        {post.data.image && (
+          <a href={`/${post.slug}`} class="w-full col-span-full lg:col-span-2 order-1 lg:order-none rounded-lg block hover:text-primary overflow-hidden group">
+            <img
+              class="group-hover:scale-[1.03] transition duration-300 w-full object-contain h-72"
+              src={post.data.image}
+              alt={post.data.title}
+              width={445}
+              height={230}
+              loading="lazy"
+            />
+          </a>
+        )}
+        <div class="w-full col-span-full flex flex-col gap-4 lg:col-span-3">
+          <h2>
+            <a href={`/programming-journey/${post.slug}`} class="block hover:text-primary transition duration-300">
+              {post.data.title}
+            </a>
+          </h2>
+          <ul class="flex flex-wrap items-center text-text">
+            <li class="mr-5 flex items-center flex-wrap font-medium">
+              <BiCalendarEdit className="mr-1 h-5 w-5 text-gray-600" />
+              <>{dateFormat(post.data.date)}</>
+            </li>
+            <li class="mr-5 flex items-center flex-wrap">
+              <BiCategoryAlt className="mr-1 h-[18px] w-[18px] text-gray-600" />
+              <>
+                <ul>
+                  {post.data.categories.map((category: string, i: number) => (
+                    <li class="inline-block">
+                      <a
+                        href={`/programming-journey/categories/${slugify(category)}`}
+                        class="mr-2 hover:text-primary font-medium"
+                      >
+                        {humanize(category)}{i !== post.data.categories.length - 1 && ","}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            </li>
+          </ul>
+          <p class="text-text">
+            {post.data.description}
+          </p>
+          <Tags tags={post.data.tags} />
+        </div>
+      </div>
+    ))
+  }
+</div>

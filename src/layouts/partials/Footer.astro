@@ -1,0 +1,32 @@
+---
+import Social from "@components/Social.astro";
+import menu from "@config/menu.json";
+import social from "@config/social.json";
+---
+
+<footer class="section bg-theme-dark">
+  <div
+    class="container flex justify-between px-8 text-center align-middle sm:px-32 md:px-8"
+  >
+    {/* footer menu */}
+    <ul class="flex flex-col gap-4 align-middle md:flex-row">
+      {
+        menu.footer.map((menu) => (
+          <li class="flex">
+            <a
+              href={menu.url}
+              class="p-4 text-white/75 transition-all hover:text-white"
+            >
+              {menu.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    {/* social icons */}
+    <Social
+      source={social}
+      className="social-icons flex flex-col gap-4 align-middle md:flex-row"
+    />
+  </div>
+</footer>

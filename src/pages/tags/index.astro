@@ -1,0 +1,32 @@
+---
+import Base from "@layouts/Base.astro";
+import { getTaxonomy } from "@lib/taxonomyParser.astro";
+import { humanize } from "@lib/utils/textConverter";
+
+import { FaHashtag } from "react-icons/fa/index.js";
+
+const tags = await getTaxonomy("posts", "tags");
+---
+
+<Base title={"Tags"}>
+  <section class="section">
+    <div class="container text-center">
+      <h1 class="h2 page-heading">Tags</h1>
+      <ul class="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+        {
+          tags.map((tag) => (
+            <li class="inline-block">
+              <a
+                href={`/programming-journey/tags/${tag}`}
+                class="group flex items-center rounded-lg bg-theme-light px-4 py-2 text-dark transition hover:bg-primary hover:text-white"
+              >
+                <FaHashtag className="mr-1 text-primary transition group-hover:text-white" />
+                <>{humanize(tag || "")}</>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,32 @@
+{
+  "site": {
+    "title": "Nemca Blog Astro",
+    "base_url": "https://nemanjastojanovicc.github.io",
+    "base_path": "/programming-journey",
+    "trailing_slash": false,
+    "favicon": "/programming-journey/images/favicon.svg",
+    "logo_text": "Nemca Blog"
+  },
+
+  "settings": {
+    "pagination": 5,
+    "summary_length": 100
+  },
+
+  "metadata": {
+    "meta_author": "Nemca",
+    "meta_image": "/programming-journey/images/nemanja-stojanovic.webp",
+    "meta_description": "Nemca Blog Astro"
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": ""
+  },
+
+  "contactinfo": {
+    "address": "",
+    "email": "",
+    "phone": ""
+  }
+}

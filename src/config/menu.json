@@ -1,0 +1,26 @@
+{
+  "main": [
+    {
+      "name": "Categories",
+      "url": "/programming-journey/categories"
+    },
+    {
+      "name": "Tags",
+      "url": "/programming-journey/tags"
+    }
+  ],
+  "footer": [
+    {
+      "name": "Home",
+      "url": "/programming-journey"
+    },
+    {
+      "name": "Categories",
+      "url": "/programming-journey/categories"
+    },
+    {
+      "name": "Tags",
+      "url": "/programming-journey/tags"
+    }
+  ]
+}

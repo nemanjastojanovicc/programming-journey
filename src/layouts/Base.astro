@@ -1,0 +1,126 @@
+---
+import TwSizeIndicator from "@components/TwSizeIndicator.astro";
+import config from "@config/config.json";
+import { plainify } from "@lib/utils/textConverter";
+import Footer from "@partials/Footer.astro";
+import Header from "@partials/Header.astro";
+import "@styles/style.scss";
+
+
+// types for frontmatters
+export interface Props {
+  title?: string;
+  meta_title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  canonical?: string;
+}
+
+// distructure frontmatters
+const { title, meta_title, description, image, noindex, canonical } =
+  Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href={config.site.favicon} />
+
+    <meta name="theme-name" content="nemca-blog-astro" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#fff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#000"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5"
+    />
+
+    <title>
+      {plainify(meta_title ? meta_title : title ? title : config.site.title)}
+    </title>
+
+    {canonical && <link rel="canonical" href={canonical} item-prop="url" />}
+
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+
+    <meta
+      name="description"
+      content={plainify(
+        description ? description : config.metadata.meta_description
+      )}
+    />
+
+    <meta name="author" content={config.metadata.meta_author} />
+
+    <meta
+      property="og:title"
+      content={plainify(
+        meta_title ? meta_title : title ? title : config.site.title
+      )}
+    />
+
+    <meta
+      property="og:description"
+      content={plainify(
+        description ? description : config.metadata.meta_description
+      )}
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content={`${config.site.base_url}/${Astro.url.pathname.replace("/", "")}`}
+    />
+
+    <meta
+      name="twitter:title"
+      content={plainify(
+        meta_title ? meta_title : title ? title : config.site.title
+      )}
+    />
+
+    <meta
+      name="twitter:description"
+      content={plainify(
+        description ? description : config.metadata.meta_description
+      )}
+    />
+
+    <meta
+      property="og:image"
+      content={`${config.site.base_url}${
+        image ? image : config.metadata.meta_image
+      }`}
+    />
+
+    <meta
+      name="twitter:image"
+      content={`${config.site.base_url}${
+        image ? image : config.metadata.meta_image
+      }`}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <TwSizeIndicator />
+    <Header />
+    <main id="main-content" class="min-h-[60vh]">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
