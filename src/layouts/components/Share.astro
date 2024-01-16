@@ -27,7 +27,7 @@ const final_url = `${base_url}/${base_path}/${slug}`;
   <li class="inline-block">
     <a
       aria-label="twitter share button"
-      href={`https://twitter.com/intent/tweet/?text=${title}&amp;url=${final_url}`}
+      href={`https://twitter.com/intent/tweet/?text=${title};url=${final_url}`}
       target="_blank"
       rel="noreferrer noopener"
     >
@@ -42,16 +42,6 @@ const final_url = `${base_url}/${base_path}/${slug}`;
       rel="noreferrer noopener"
     >
       <IoLogoLinkedin />
-    </a>
-  </li>
-  <li class="inline-block">
-    <a
-      aria-label="pinterest share button"
-      href={`https://pinterest.com/pin/create/button/?url=${final_url}&media=&description=${description}`}
-      target="_blank"
-      rel="noreferrer noopener"
-    >
-      <IoLogoPinterest />
     </a>
   </li>
 </ul>
