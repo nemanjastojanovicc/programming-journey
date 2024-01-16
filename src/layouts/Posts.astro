@@ -12,7 +12,7 @@ const { className, posts } = Astro.props;
     posts.map((post: any) => (
       <div class="w-full grid grid-cols-5 gap-8">
         {post.data.image && (
-          <a href={`/${post.slug}`} class="w-full col-span-full lg:col-span-2 order-1 lg:order-none rounded-lg block hover:text-primary overflow-hidden group">
+          <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-2 order-1 lg:order-none rounded-lg block hover:text-primary overflow-hidden group">
             <img
               class="group-hover:scale-[1.03] transition duration-300 w-full object-contain h-72"
               src={post.data.image}
