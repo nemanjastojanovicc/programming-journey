@@ -1,7 +1,7 @@
 ---
 title: "Optimistic Updates in Tanstack Query V5"
 date: 2023-12-21T09:51:02+01:00
-image: "/src/images/posts/03-optimistic-updates/03-tq-optimistic-updates-1.webp"
+image: "/programming-journey/images/posts/03-optimistic-updates/03-tq-optimistic-updates-1.webp"
 draft: false
 categories: ["development"]
 tags: ["tanstack query", "react", "javascript"]
@@ -9,7 +9,7 @@ imgHeight: 650
 description: "Tanstack Query released version 5 with a number of changes and some interesting features, offering an even more powerful toolkit for developers."
 ---
 
-![Optimistic Updates introduction](/src/images/posts/03-optimistic-updates/03-tq-optimistic-updates-1.webp)
+![Optimistic Updates introduction](/programming-journey/images/posts/03-optimistic-updates/03-tq-optimistic-updates-1.webp)
 
 **Tanstack Query** released **version 5** with a number of changes and some interesting features, offering an even more powerful toolkit for developers.
 
@@ -25,11 +25,11 @@ In this story, we’ll try to figure out when to use each of them, but first, le
 
 In web development, when users interact with a website (such as clicking or entering data), **we often need to send requests to a server** in the background. After that, we have to wait for the server to process those requests and send responses back, allowing communication between the UI and the server.
 
-![Sending Requests](/src/images/posts/03-optimistic-updates/03-tq-optimistic-updates-2.webp)
+![Sending Requests](/programming-journey/images/posts/03-optimistic-updates/03-tq-optimistic-updates-2.webp)
 
 Now imagine a scenario where we have a **toggle button** that `enables` or `disables` a feature. Initially some feature is disabled, and we want to enable it, but after clicking on the toggle button **we wait for the request** to be processed on the server and only after a few seconds the toggle button is turned on.
 
-![Toggle Button main issue](/src/images/posts/03-optimistic-updates/03-tq-optimistic-updates-3.webp)
+![Toggle Button main issue](/programming-journey/images/posts/03-optimistic-updates/03-tq-optimistic-updates-3.webp)
 
 **And this is fine, if our requirements are such that we can show some kind of loader or skeleton** until we get a response from the backend.
 
@@ -45,7 +45,7 @@ This can create a smoother user interface by providing immediate feedback to use
 
 So instead of waiting for the server’s response to reflect the change in the UI, **we can optimistically update our toggle button’s state as soon as the user interacts with it**. If the server operation succeeds, the user won’t notice any delay.
 
-![Toggle Button solution](/src/images/posts/03-optimistic-updates/03-tq-optimistic-updates-4.webp)
+![Toggle Button solution](/programming-journey/images/posts/03-optimistic-updates/03-tq-optimistic-updates-4.webp)
 
 In other words, we assume that our request will be successful and that we will probably be right in most situations.
 
@@ -53,7 +53,7 @@ In other words, we assume that our request will be successful and that we will p
 
 **We can implement the error handler logic** that will inform the user that an error has occurred and display the previous and valid state.
 
-![Toggle Button error handler](/src/images/posts/03-optimistic-updates/03-tq-optimistic-updates-5.webp)
+![Toggle Button error handler](/programming-journey/images/posts/03-optimistic-updates/03-tq-optimistic-updates-5.webp)
 
 And finally, let’s see how we can implement this using Tanstack Query.
 

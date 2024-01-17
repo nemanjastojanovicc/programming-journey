@@ -3,7 +3,7 @@ title: "How to Implement Light and Dark Theme in Nextjs"
 date: 2022-04-04T05:00:00Z
 author: "Nemca Dev"
 categories: ["development"]
-image: "/src/images/posts/04-light-dark/04-light-and-dark-1.webp"
+image: "/programming-journey/images/posts/04-light-dark/04-light-and-dark-1.webp"
 tags: ["nextjs", "css", "react", "typescript"]
 draft: false
 imgHeight: 400
@@ -14,7 +14,7 @@ In this story, we’ll see **one of the ways** to implement a Light & Dark theme
 
 Apart from the step-by-step implementation, we will also try to answer the questions **whether we need this functionality at all and are there any advantages of using only CSS for styling**.
 
-![Light & Dark theme banner](/src/images/posts/04-light-dark/04-light-and-dark-1.webp)
+![Light & Dark theme banner](/programming-journey/images/posts/04-light-dark/04-light-and-dark-1.webp)
 
 ## Should we implement the Light & Dark theme?
 
@@ -106,7 +106,7 @@ In this way, by simply passing the `.light` or `.dark` class, we will actually u
 
 Before we move on to the next section, if you have problems creating your color palette, this site can help you:
 
-![Color Hunt Website](/src/images/posts/04-light-dark/04-light-and-dark-2.webp)
+![Color Hunt Website](/programming-journey/images/posts/04-light-dark/04-light-and-dark-2.webp)
 
 [colorhunt.co](https://colorhunt.co/)
 

@@ -1,6 +1,5 @@
 ---
 import { BiCalendarEdit, BiCategoryAlt } from "react-icons/bi/index.js";
-import { Picture } from "astro-imagetools/components";
 
 import dateFormat from "@lib/utils/dateFormat";
 import { humanize, slugify } from "@lib/utils/textConverter";
@@ -18,13 +17,13 @@ const { className, posts } = Astro.props;
         {post.data.image && (
           <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-2 order-1 lg:order-none rounded-lg block hover:text-primary overflow-hidden group">
 
-            <Picture
+            <img
               src={post.data.image}
               alt={post.data.title}
-              placeholder="blurred"
+              class="w-full h-full object-cover transition duration-300 transform group-hover:scale-105"
               loading="lazy"
+              decoding="async"
             />
-
           </a>
         )}
         <div class="w-full col-span-full flex flex-col gap-4 lg:col-span-3">

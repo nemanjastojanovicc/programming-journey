@@ -3,7 +3,7 @@ title: "Simplifying Code Complexity with JavaScript’s Pipe Method"
 date: 2023-11-22T16:55:24+01:00
 draft: false
 description: "JavaScript offers us a powerful tool to break down complex functions into smaller, manageable pieces. In this story, we’ll explore the pipe method and demonstrate its benefits through a real-world scenario."
-image: "/src/images/posts/01-pipe-method/pipe-illustration.webp"
+image: "/programming-journey/images/posts/01-pipe-method/pipe-illustration.webp"
 categories: ["development"]
 tags: ["cleancode", "javascript"]
 imgHeight: 100
@@ -11,7 +11,7 @@ imgHeight: 100
 
 In the world of modern web development, maintaining clean and efficient code is essential. As projects grow, so does the complexity of our functions. However, JavaScript offers us a powerful tool to break down these complex functions into smaller, manageable pieces. In this story, we’ll explore the pipe method and demonstrate its benefits through a real-world scenario.
 
-![Pipe Illustration](/src/images/posts/01-pipe-method/pipe-illustration.webp)
+![Pipe Illustration](/programming-journey/images/posts/01-pipe-method/pipe-illustration.webp)
 
 This is a basic pipe illustration that we will get to later.
 
@@ -19,7 +19,7 @@ This is a basic pipe illustration that we will get to later.
 
 _We want to calculate the final price of a purchase that a user has made while buying various products. Firstly, some of the products are eligible for discount, so we want to use a discount map in order to apply those discounts to the product’s original price. Next, we want to calculate the total sum of the discounted price. If the customer has a coupon, we need to take that into consideration as well. Finally, after calculating the price in one currency, and (if needed) converting it to some other, we deliver the final price to the customer._
 
-![Problem Explanation](/src/images/posts/01-pipe-method/problem-explanation.webp)
+![Problem Explanation](/programming-journey/images/posts/01-pipe-method/problem-explanation.webp)
 
 **Data we’re working with:**
 
@@ -105,7 +105,7 @@ const calculateFinalPrice = (
 
 Our calculateFinalPrice function solves our problem and if we look carefully we will see that we solve the problem by following these steps:
 
-![Problem Illustration](/src/images/posts/01-pipe-method/problem-illustration.webp)
+![Problem Illustration](/programming-journey/images/posts/01-pipe-method/problem-illustration.webp)
 
 What is bad with this approach?
 
@@ -121,7 +121,7 @@ The pipe method allows us to split a large, complex function into smaller, compo
 
 In simpler terms, think of the pipe method as a car wash. At each stage (function) your car goes through a specific cleaning or treatment process. By the time it leaves the car wash, it’s shiny and ready, having gone through a series of steps in a pre-defined sequence.
 
-![Car Wash pipe illustration](/src/images/posts/01-pipe-method/car-wash.webp)
+![Car Wash pipe illustration](/programming-journey/images/posts/01-pipe-method/car-wash.webp)
 Photo by [Freepic](https://www.freepik.com/free-vector/car-wash-isometric-colored-composition-four-steps-washing-red-car-vector-illustration_32742530.htm)
 
 This is an example of simple implementation of this function I found [reduce composing software](https://medium.com/javascript-scene/reduce-composing-software-fe22f0c39a1d), which was introduced earlier by [Eric Elliot](https://medium.com/@_ericelliott):
@@ -206,7 +206,7 @@ We start from the data on User Purchases and in each step we apply a certain fun
 
 Something like this:
 
-![Problem Step By Step](/src/images/posts/01-pipe-method/step-by-step.webp)
+![Problem Step By Step](/programming-journey/images/posts/01-pipe-method/step-by-step.webp)
 
 What are the benefits of this approach?
 
