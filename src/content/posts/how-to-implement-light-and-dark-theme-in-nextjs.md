@@ -36,13 +36,13 @@ After answering these questions, let’s start with the implementation.
 
 To initialize the NextJS application, we’ll use the following command:
 
-```
+```shell
 npx create-next-app@latest
 ```
 
 In this way we’ll use the latest version of NextJS (currently it is **14.0.3**), after that you’ll see the following prompts:
 
-```
+```shell
 What is your project named? my-app
 Would you like to use TypeScript? No / Yes
 Would you like to use ESLint? No / Yes
@@ -71,7 +71,7 @@ The good thing about this is that **if we want to change a color, we only need t
 
 We can start adding CSS variables in the _src/app/globals.css_ file:
 
-```javascript
+```css
 :root {
 --bgColor: white;
 --textColor: black;
@@ -84,7 +84,7 @@ We can start adding CSS variables in the _src/app/globals.css_ file:
 
 We’ll also add `.light` and `.dark` classes:
 
-```javascript
+```css
 .light {
 --bg: white;
 --textColor: black;
