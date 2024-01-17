@@ -1,4 +1,6 @@
 ---
+import { Picture } from "astro-imagetools/components";
+
 import Share from "@components/Share.astro";
 import Tags from "@components/Tags.astro";
 import SimilarPosts from "@components/SimilarPosts.astro";
@@ -50,6 +52,14 @@ const { title, description, categories, date, tags } =
 
       <div class="md:col-10">
         <div class="content mb-16 text-left">
+            <p class="text-text">
+              {post.data.description}
+            </p>
+
+            <Picture
+              src={post.data.image}
+              alt={post.data.title}
+            />
           <Content />
         </div>
         <div class="flex flex-wrap items-center justify-between">

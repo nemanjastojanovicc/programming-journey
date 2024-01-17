@@ -1,15 +1,13 @@
 ---
 title: "Optimistic Updates in Tanstack Query V5"
 date: 2023-12-21T09:51:02+01:00
-image: "/programming-journey/images/posts/03-optimistic-updates/03-tq-optimistic-updates-1.webp"
+image: "/src/images/posts/03-optimistic-updates/03-tq-optimistic-updates-1.webp"
 draft: false
 categories: ["development"]
 tags: ["tanstack query", "react", "javascript"]
 imgHeight: 650
 description: "Tanstack Query released version 5 with a number of changes and some interesting features, offering an even more powerful toolkit for developers."
 ---
-
-![Optimistic Updates introduction](/programming-journey/images/posts/03-optimistic-updates/03-tq-optimistic-updates-1.webp)
 
 **Tanstack Query** released **version 5** with a number of changes and some interesting features, offering an even more powerful toolkit for developers.
 

@@ -3,7 +3,7 @@ title: "Use Simple Approach to Create Data Table in React"
 date: 2023-12-21T09:48:53+01:00
 draft: false
 description: "In this story we will try to create a reusable DataTable component using a simple way to pass the data and configure the table. 🚀 "
-image: "/programming-journey/images/posts/02-react-data-table/02-data-table-2.webp"
+image: "/src/images/posts/02-react-data-table/02-data-table-1.webp"
 categories: ["development"]
 tags: ["react", "typescript"]
 imgHeight: 400
@@ -12,8 +12,6 @@ imgHeight: 400
 In this story, we’ll embark on a journey to create a DataTable component in React. Data tables are a common requirement in web applications, and making them can be a challenging task.
 
 Our goal is to build a simple component that we can reuse across an application to display various types of data.
-
-<img src="/programming-journey/images/posts/02-react-data-table/02-data-table-1.webp" alt="The Data Table we will build" loading="lazy" decoding="async">
 
 We’ll start with the initial implementation and show the products. Those products will be in the following format:
 
