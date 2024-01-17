@@ -2,15 +2,24 @@
 import { getSinglePage } from "./contentParser.astro";
 import { slugify } from "./utils/textConverter";
 
+type Collection = "posts" | "pages";
+
 // get all taxonomies from frontmatter
-export const getTaxonomy = async (collection: string, name: string) => {
+export const getTaxonomy = async (collection: Collection, name: string) => {
   const singlePages = await getSinglePage(collection);
-  const taxonomyPages = singlePages.map((page) => page.data[name]);
+
+  const taxonomyPages = singlePages.map(
+    (page) => page.data[name as keyof typeof page.data]
+  );
+
   let taxonomies = [];
   for (let i = 0; i < taxonomyPages.length; i++) {
     const categoryArray = taxonomyPages[i];
-    for (let j = 0; j < categoryArray.length; j++) {
-      taxonomies.push(slugify(categoryArray[j]));
+
+    if (categoryArray && typeof categoryArray === "string") {
+      for (let j = 0; j < categoryArray.length; j++) {
+        taxonomies.push(slugify(categoryArray[j]));
+      }
     }
   }
   const taxonomy = [...new Set(taxonomies)];

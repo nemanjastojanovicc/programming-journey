@@ -1,4 +1,3 @@
-// similer products
 const similerItems = (currentItem: any, allItems: any, slug: string) => {
   let categories: [] = [];
   let tags: [] = [];
