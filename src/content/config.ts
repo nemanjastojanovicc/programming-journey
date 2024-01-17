@@ -1,5 +1,7 @@
 import { defineCollection, z } from "astro:content";
 
+//TODO: add appUri
+
 // Post collection schema
 const postsCollection = defineCollection({
   schema: z.object({

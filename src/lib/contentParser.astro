@@ -1,7 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 
-export const getSinglePage = async (collection: any) => {
+type Collection = "posts" | "pages";
+
+export const getSinglePage = async (collection: Collection) => {
   const allPage = await getCollection(collection);
   const removeIndex = allPage.filter((data) => data.id.match(/^(?!-)/));
   const removeDrafts = removeIndex.filter((data) => !data.data.draft);

@@ -1,21 +1,18 @@
-import { slug } from 'github-slugger';
+import { slug } from "github-slugger";
 import { marked } from "marked";
 
-// slugify
 export const slugify = (content: string) => {
   if (!content) return null;
 
   return slug(content);
 };
 
-// markdownify
 export const markdownify = (content: string) => {
   if (!content) return null;
 
   return marked.parseInline(content);
 };
 
-// humanize
 export const humanize = (content: string) => {
   if (!content) return null;
 
@@ -27,7 +24,6 @@ export const humanize = (content: string) => {
     });
 };
 
-// plainify
 export const plainify = (content: string) => {
   if (!content) return null;
 
@@ -37,7 +33,6 @@ export const plainify = (content: string) => {
   return stripHTML;
 };
 
-// strip entities for plainify
 const htmlEntityDecoder = (htmlWithEntities: string): string => {
   let entityList: { [key: string]: string } = {
     "&nbsp;": " ",

@@ -3,7 +3,7 @@ title: "Use Simple Approach to Create Data Table in React"
 date: 2023-12-21T09:48:53+01:00
 draft: false
 description: "In this story we will try to create a reusable DataTable component using a simple way to pass the data and configure the table. 🚀 "
-image: "/programming-journey/images/posts/02-react-data-table/02-data-table-2.webp"
+image: "/src/images/posts/02-react-data-table/02-data-table-2.webp"
 categories: ["development"]
 tags: ["react", "typescript"]
 imgHeight: 400
@@ -13,7 +13,7 @@ In this story, we’ll embark on a journey to create a DataTable component in Re
 
 Our goal is to build a simple component that we can reuse across an application to display various types of data.
 
-<img src="/programming-journey/images/posts/02-react-data-table/02-data-table-1.webp" alt="The Data Table we will build" loading="lazy">
+<img src="/src/images/posts/02-react-data-table/02-data-table-1.webp" alt="The Data Table we will build" loading="lazy" decoding="async">
 
 We’ll start with the initial implementation and show the products. Those products will be in the following format:
 
@@ -44,9 +44,7 @@ We can see that each product contains information about the `discount`, `availab
 
 Some product properties will be displayed in their original format, while others will be transformed.
 
-<img src="/programming-journey/images/posts/02-react-data-table/02-data-table-2.webp" alt="The Data Table explanation" loading="lazy">
-
-<!-- ![The Data Table explanation](/programming-journey/images/posts/02-react-data-table/02-data-table-2.webp) -->
+<img src="/src/images/posts/02-react-data-table/02-data-table-2.webp" alt="The Data Table explanation" loading="lazy" decoding="async">
 
 One of the easiest ways to implement our table and display product data would be:
 
@@ -214,9 +212,7 @@ However, the logic of the **TableBody** component is more complex, but the idea 
 - For each row, we will make as many cells as we have columns
 - For each column we defined fieldId (which product property we are accessing) and valueFormatter (how to display that property value)
 
-<img src="/programming-journey/images/posts/02-react-data-table/02-data-table-3.webp" alt="Table Body illustration" loading="lazy">
-
-<!-- ![Table Body illustration](/programming-journey/images/posts/02-react-data-table/02-data-table-3.webp) -->
+<img src="/src/images/posts/02-react-data-table/02-data-table-3.webp" alt="Table Body illustration" loading="lazy" decoding="async">
 
 So our implementation of the **TableBody** component might look like this:
 
@@ -273,9 +269,7 @@ And this type is fine, the only thing I didn’t like about it is that the first
 
 Because in this way we didn’t say exactly what type is our value that we display in the table cell. We just said that it is some value of our Product type:
 
-<img src="/programming-journey/images/posts/02-react-data-table/02-data-table-4.webp" alt="Product type issue" loading="lazy">
-
-<!-- ![Product type issue](/programming-journey/images/posts/02-react-data-table/02-data-table-4.webp) -->
+<img src="/src/images/posts/02-react-data-table/02-data-table-4.webp" alt="Product type issue" loading="lazy" decoding="async">
 
 So in order to fix this we have to write `as ProductItem["price"]`:
 

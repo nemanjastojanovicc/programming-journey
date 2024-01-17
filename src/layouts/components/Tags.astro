@@ -1,6 +1,9 @@
 ---
+import config from "@config/config.json";
 import { humanize, slugify } from "@lib/utils/textConverter";
+
 const { tags } = Astro.props;
+const { base_path } = config.site;
 ---
 
 <ul class="mb-4 mr-4 flex flex-col gap-3 sm:flex-row">
@@ -8,7 +11,7 @@ const { tags } = Astro.props;
     tags.map((tag: string) => (
       <li class="inline-block">
         <a
-          href={`/programming-journey/tags/${slugify(tag)}`}
+          href={`${base_path}/tags/${slugify(tag)}`}
           class="block rounded-lg bg-theme-light px-4 py-2 text-sm font-semibold text-dark transition duration-300 hover:text-primary"
         >
           #{humanize(tag)}
