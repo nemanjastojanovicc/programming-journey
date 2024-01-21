@@ -29,4 +29,9 @@ export default defineConfig({
     },
     extendDefaultPlugins: true,
   },
+  prefetch: true,
+  experimental: {
+    clientPrerender: true,
+    globalRoutePriority: true,
+  },
 });
