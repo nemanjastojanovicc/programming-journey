@@ -198,7 +198,13 @@ const calculateFinalPrice = (items, discountMap, coupon, conversionRate) =>
   )(items);
 ```
 
-[Try it on Codepen](https://codepen.io/Nemanja-Stojanovic-the-bashful/pen/xxmPNPd)
+You can try it on codepen:
+
+<iframe height="300" style="width: 100%; height: 600px" scrolling="no" title="JavaScript’s Pipe Method" src="https://codepen.io/Nemanja-Stojanovic-the-bashful/embed/xxmPNPd?default-tab=js" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/Nemanja-Stojanovic-the-bashful/pen/xxmPNPd">
+  JavaScript’s Pipe Method</a> by Nemanja Stojanovic (<a href="https://codepen.io/Nemanja-Stojanovic-the-bashful">@Nemanja-Stojanovic-the-bashful</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 We start from the data on User Purchases and in each step we apply a certain function and transform the data until we get the final result.
 

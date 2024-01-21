@@ -2,6 +2,7 @@
 import config from "@config/config.json";
 import dateFormat from "@lib/utils/dateFormat";
 import { humanize, slugify } from "@lib/utils/textConverter";
+import { Picture } from "astro-imagetools/components";
 
 import { BiCalendarEdit, BiCategoryAlt } from "react-icons/bi/index.js";
 
@@ -34,13 +35,12 @@ const generatePostPath = (slug: string) => `${base_path}/${slug}`;
             href={generatePostPath(post.slug)}
             class="group block overflow-hidden rounded-lg hover:text-primary"
           >
-            <img
-              class="h-56 w-full object-contain transition duration-300 group-hover:scale-[1.05]"
+            <Picture
               src={post.data.image}
               alt={post.data.title}
               width={445}
               height={230}
-              loading="lazy"
+              placeholder="dominantColor"
             />
           </a>
         )}
