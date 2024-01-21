@@ -73,10 +73,10 @@ We can start adding CSS variables in the _src/app/globals.css_ file:
 
 ```css
 :root {
---bgColor: white;
---textColor: black;
---primaryMainColor: #f37335;
---primaryAccentColor: #fdc830;
+  --bgColor: white;
+  --textColor: black;
+  --primaryMainColor: #f37335;
+  --primaryAccentColor: #fdc830;
 }
 ```
 
@@ -86,17 +86,17 @@ We’ll also add `.light` and `.dark` classes:
 
 ```css
 .light {
---bg: white;
---textColor: black;
---primaryMainColor: #f37335;
---primaryAccentColor: #fdc830;
+  --bg: white;
+  --textColor: black;
+  --primaryMainColor: #f37335;
+  --primaryAccentColor: #fdc830;
 }
 
 .dark {
---bg: #9ab4e4;
---textColor: white;
---primaryMainColor: #363795;
---primaryAccentColor: #005c97;
+  --bg: #9ab4e4;
+  --textColor: white;
+  --primaryMainColor: #363795;
+  --primaryAccentColor: #005c97;
 }
 ```
 
