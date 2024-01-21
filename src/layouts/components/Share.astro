@@ -1,10 +1,7 @@
 ---
 import config from "@config/config.json";
-import {
-  IoLogoFacebook,
-  IoLogoLinkedin,
-  IoLogoTwitter,
-} from "react-icons/io5/index.js";
+import Linkedin from "@svgs/Linkedin.astro";
+import Twitter from "@svgs/Twitter.astro";
 
 const { base_url, base_path } = config.site;
 const { title, description, slug, className } = Astro.props;
@@ -20,7 +17,7 @@ const final_url = `${base_url}/${base_path}/${slug}`;
       target="_blank"
       rel="noreferrer noopener"
     >
-      <IoLogoFacebook />
+      <Twitter />
     </a>
   </li>
   <li class="inline-block">
@@ -30,7 +27,7 @@ const final_url = `${base_url}/${base_path}/${slug}`;
       target="_blank"
       rel="noreferrer noopener"
     >
-      <IoLogoTwitter />
+      <Twitter fill="#747577" />
     </a>
   </li>
   <li class="inline-block">
@@ -40,7 +37,7 @@ const final_url = `${base_url}/${base_path}/${slug}`;
       target="_blank"
       rel="noreferrer noopener"
     >
-      <IoLogoLinkedin />
+      <Linkedin fill="#747577" />
     </a>
   </li>
 </ul>

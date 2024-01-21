@@ -1,12 +1,10 @@
 ---
-const { source, className } = Astro.props;
+import Github from "@svgs/Github.astro";
+import Linkedin from "@svgs/Linkedin.astro";
+import Medium from "@svgs/Medium.astro";
+import Twitter from "@svgs/Twitter.astro";
 
-import {
-  IoLogoGithub,
-  IoLogoLinkedin,
-  IoLogoMedium,
-  IoLogoTwitter,
-} from "react-icons/io5/index.js";
+const { source, className } = Astro.props;
 
 const { twitter, linkedin, github, medium } = source;
 ---
@@ -21,7 +19,7 @@ const { twitter, linkedin, github, medium } = source;
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoTwitter />
+          <Twitter />
         </a>
       </li>
     )
@@ -35,7 +33,7 @@ const { twitter, linkedin, github, medium } = source;
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoLinkedin />
+          <Linkedin />
         </a>
       </li>
     )
@@ -49,7 +47,7 @@ const { twitter, linkedin, github, medium } = source;
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoGithub />
+          <Github />
         </a>
       </li>
     )
@@ -63,7 +61,7 @@ const { twitter, linkedin, github, medium } = source;
           target="_blank"
           rel="noopener noreferrer nofollow"
         >
-          <IoLogoMedium />
+          <Medium />
         </a>
       </li>
     )

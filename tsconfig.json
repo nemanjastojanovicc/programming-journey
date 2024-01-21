@@ -5,6 +5,7 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
+      //TODO: zameniti sve sa @/* => @/*: ["src/*"]
       "@layouts/*": ["./src/layouts/*"],
       "@components/*": ["./src/layouts/components/*"],
       "@partials/*": ["./src/layouts/partials/*"],
@@ -12,7 +13,8 @@
       "@config/*": ["./src/config/*"],
       "@content/*": ["./src/content/*"],
       "@styles/*": ["./src/styles/*"],
-      "@lib/*": ["./src/lib/*"]
+      "@lib/*": ["./src/lib/*"],
+      "@svgs/*": ["./src/svgs/*"]
     }
   }
 }
