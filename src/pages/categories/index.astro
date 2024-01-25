@@ -1,32 +1,57 @@
 ---
 import Base from "@layouts/Base.astro";
+import Book from "@layouts/components/Book.astro";
 import { getTaxonomy } from "@lib/taxonomyParser.astro";
-import { humanize } from "@lib/utils/textConverter";
-import Category from "@svgs/Category.astro";
 
 const categories = await getTaxonomy("posts", "categories");
 
+const CATEGORIES = {
+  astro: {
+    imageUrl:
+      "https://astro-build.gallerycdn.vsassets.io/extensions/astro-build/astro-vscode/2.6.2/1704781732029/Microsoft.VisualStudio.Services.Icons.Default",
+    imageAlt: "Astro Book",
+  },
+  next: {
+    imageUrl:
+      "https://miro.medium.com/v2/resize:fit:610/1*0N1cRFT9fFjOPEswcYAraw.png",
+    imageAlt: "NextJS Book",
+  },
+  react: {
+    imageUrl:
+      "https://miro.medium.com/v2/resize:fit:1358/1*CeuWv9fCjD1uTiTuKytnBQ.png",
+    imageAlt: "React Book",
+  },
+};
 ---
 
 <Base title={"Categories"}>
   <section class="section">
     <div class="container text-center">
       <h1 class="h2 page-heading">Categories</h1>
-      <ul class="flex flex-col justify-center gap-4 sm:flex-row">
+      <div class="book-wrapper flex-col items-center md:flex-row">
         {
           categories.map((category) => (
-            <li class="inline-block">
-              <a
-                href={`/programming-journey/categories/${category}`}
-                class="group flex items-center rounded-lg bg-theme-light px-4 py-2 text-dark transition hover:bg-primary hover:text-white"
-              >
-                <Category className="mr-1 h-6 w-6 scale-75 text-primary transition group-hover:text-white" />
-                <>{humanize(category || "")}</>
-              </a>
-            </li>
+            <Book
+              link={`/programming-journey/categories/${category}`}
+              imageUrl={CATEGORIES[category].imageUrl}
+              imageAlt={CATEGORIES[category].imageAlt}
+            />
           ))
         }
-      </ul>
+      </div>
     </div>
   </section>
 </Base>
+
+<style>
+  .book-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 0 auto;
+    column-count: 3;
+    column-gap: 12px;
+    padding: 4px;
+  }
+</style>

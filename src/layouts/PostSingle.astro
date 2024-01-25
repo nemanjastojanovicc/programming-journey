@@ -1,51 +1,54 @@
 ---
 import { Picture } from "astro-imagetools/components";
 
+import Quiz from "@components/Quiz.astro";
 import Share from "@components/Share.astro";
-import Tags from "@components/Tags.astro";
 import SimilarPosts from "@components/SimilarPosts.astro";
+import Tags from "@components/Tags.astro";
 import { getSinglePage } from "@lib/contentParser.astro";
 import dateFormat from "@lib/utils/dateFormat";
 import similerItems from "@lib/utils/similarItems";
-import { humanize,markdownify,slugify } from "@lib/utils/textConverter";
-import DateEvent from '@svgs/DateEvent.astro';
+import { humanize, markdownify, slugify } from "@lib/utils/textConverter";
 import Category from "@svgs/Category.astro";
+import DateEvent from "@svgs/DateEvent.astro";
 
 const posts = await getSinglePage("posts");
 const { post } = Astro.props;
 const similarPosts = similerItems(post, posts, post.slug);
 const { Content } = await post.render();
-const { title, description, categories, date, tags } =
-  post.data;
+const { title, description, categories, date, tags } = post.data;
 ---
 
 <section class="section">
   <div class="container">
     <article class="row justify-center">
-      <div class="md:col-10 text-center">
+      <div class="text-center md:col-10">
         <h1 set:html={markdownify(title)} class="h2" />
         <ul class="mt-4 flex flex-wrap items-center justify-center text-text">
-          <li class="mx-3 flex items-center flex-wrap font-medium gap-1">
+          <li class="mx-3 flex flex-wrap items-center gap-1 font-medium">
             <DateEvent />
             <>{dateFormat(date)}</>
           </li>
-          <li class="mx-3 flex items-center flex-wrap gap-1">
+          <li class="mx-3 flex flex-wrap items-center gap-1">
             <Category />
             <>
-            <ul>
-              {
-                categories.map((category: string, i: number) => (
-                  <li class="inline-block">
-                    <a
-                      href={`/programming-journey/categories/${slugify(category)}`}
-                      class="mr-2 hover:text-primary font-medium"
-                    >
-                      {humanize(category)}{i !== post.data.categories.length - 1 && ","}
-                    </a>
-                  </li>
-                ))
-              }
-            </ul>
+              <ul>
+                {
+                  categories.map((category: string, i: number) => (
+                    <li class="inline-block">
+                      <a
+                        href={`/programming-journey/categories/${slugify(
+                          category
+                        )}`}
+                        class="mr-2 font-medium hover:text-primary"
+                      >
+                        {humanize(category)}
+                        {i !== post.data.categories.length - 1 && ","}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
             </>
           </li>
         </ul>
@@ -53,15 +56,15 @@ const { title, description, categories, date, tags } =
 
       <div class="md:col-10">
         <div class="content mb-16 text-left">
-            <p class="text-text">
-              {post.data.description}
-            </p>
+          <p class="text-text">
+            {post.data.description}
+          </p>
 
-            <Picture
-              src={post.data.image}
-              alt={post.data.title}
-              placeholder="none"
-            />
+          <Picture
+            src={post.data.image}
+            alt={post.data.title}
+            placeholder="none"
+          />
           <Content />
         </div>
         <div class="flex flex-wrap items-center justify-between">
@@ -83,7 +86,7 @@ const { title, description, categories, date, tags } =
   similarPosts.length > 0 && (
     <section class="section pt-0">
       <div class="container">
-        <h2 class="mb-8 text-center h3">Similar Posts</h2>
+        <h2 class="h3 mb-8 text-center">Similar Posts</h2>
         <SimilarPosts posts={similarPosts.slice(0, 3)} />
       </div>
     </section>

@@ -27,8 +27,7 @@ const title = humanize(tag || "");
 <Base title={title || "Tag"}>
   <div class="section">
     <div>
-      <p class="mb-4 text-center">Showing Posts From</p>
-      <h1 class="h2 mb-16 text-center text-primary">{title}</h1>
+      <h1 class="h2 page-heading mb-16 text-center">{title}</h1>
       <Posts posts={filterByTags} fluid={false} />
     </div>
   </div>

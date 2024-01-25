@@ -4,9 +4,8 @@ date: 2023-12-21T09:48:53+01:00
 draft: false
 description: "In this story we will try to create a reusable DataTable component using a simple way to pass the data and configure the table. 🚀 "
 image: "/src/images/posts/02-react-data-table/02-data-table-1.webp"
-categories: ["development"]
+categories: ["react"]
 tags: ["react", "typescript"]
-imgHeight: 400
 ---
 
 In this story, we’ll embark on a journey to create a DataTable component in React. Data tables are a common requirement in web applications, and making them can be a challenging task.

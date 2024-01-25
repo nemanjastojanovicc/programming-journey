@@ -21,14 +21,13 @@ const { category } = Astro.params;
 const posts = await getSinglePage("posts");
 const filterByCategory = taxonomyFilter(posts, "categories", category);
 
-const title = humanize(category || "")
+const title = humanize(category || "");
 ---
 
 <Base title={title || "Category"}>
   <div class="section">
     <div>
-      <p class="text-center mb-4">Showing Posts From</p>
-      <h1 class="h2 mb-16 text-center text-primary">{title}</h1>
+      <h1 class="h2 page-heading mb-16 text-center">{title}</h1>
       <Posts posts={filterByCategory} fluid={false} />
     </div>
   </div>

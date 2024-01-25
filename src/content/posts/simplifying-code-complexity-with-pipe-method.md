@@ -4,9 +4,8 @@ date: 2023-11-22T16:55:24+01:00
 draft: false
 description: "JavaScript offers us a powerful tool to break down complex functions into smaller, manageable pieces. In this story, we’ll explore the pipe method and demonstrate its benefits through a real-world scenario."
 image: "/src/images/posts/01-pipe-method/pipe-illustration.webp"
-categories: ["development"]
+categories: ["react"]
 tags: ["cleancode", "javascript"]
-imgHeight: 100
 ---
 
 In the world of modern web development, maintaining clean and efficient code is essential. As projects grow, so does the complexity of our functions. However, JavaScript offers us a powerful tool to break down these complex functions into smaller, manageable pieces. In this story, we’ll explore the pipe method and demonstrate its benefits through a real-world scenario.

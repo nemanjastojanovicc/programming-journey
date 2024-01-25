@@ -1,11 +1,11 @@
 {
   "site": {
-    "title": "Nemca Blog Astro",
+    "title": "Programming Journey",
     "base_url": "https://nemanjastojanovicc.github.io",
     "base_path": "/programming-journey",
     "trailing_slash": false,
     "favicon": "/programming-journey/images/favicon.svg",
-    "logo_text": "Nemca Blog"
+    "logo_text": "Programming Journey"
   },
 
   "settings": {
@@ -16,7 +16,7 @@
   "metadata": {
     "meta_author": "Nemca",
     "meta_image": "/programming-journey/images/nemanja-stojanovic.webp",
-    "meta_description": "Nemca Blog Astro"
+    "meta_description": "Programming Journey"
   },
 
   "params": {
