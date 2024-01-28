@@ -6,7 +6,6 @@ import Footer from "@partials/Footer.astro";
 import Header from "@partials/Header.astro";
 import "@styles/style.scss";
 
-
 // types for frontmatters
 export interface Props {
   title?: string;
@@ -20,6 +19,8 @@ export interface Props {
 // distructure frontmatters
 const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
+
+const finalUrl = `${config.site.base_url}/${config.site.base_path}`;
 ---
 
 <!DOCTYPE html>
@@ -97,16 +98,12 @@ const { title, meta_title, description, image, noindex, canonical } =
 
     <meta
       property="og:image"
-      content={`${config.site.base_url}${
-        image ? image : config.metadata.meta_image
-      }`}
+      content={`${finalUrl}${image ? image : config.metadata.meta_image}`}
     />
 
     <meta
       name="twitter:image"
-      content={`${config.site.base_url}${
-        image ? image : config.metadata.meta_image
-      }`}
+      content={`${finalUrl}${image ? image : config.metadata.meta_image}`}
     />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
