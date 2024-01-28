@@ -20,7 +20,7 @@ export interface Props {
 const { title, meta_title, description, image, noindex, canonical } =
   Astro.props;
 
-const finalUrl = `${config.site.base_url}/${config.site.base_path}`;
+const finalUrl = `${config.site.base_url}${config.site.base_path}`;
 ---
 
 <!DOCTYPE html>
