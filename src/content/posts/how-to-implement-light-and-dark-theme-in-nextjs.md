@@ -3,7 +3,7 @@ title: "How to Implement Light and Dark Theme in Nextjs"
 date: 2022-04-04T05:00:00Z
 author: "Nemca Dev"
 categories: ["next"]
-image: "/src/images/posts/04-light-dark/04-light-and-dark-1.webp"
+image: "/src/images/posts/04-light-dark/light-dark-main.png"
 tags: ["nextjs", "css", "react", "typescript"]
 draft: false
 description: "In this story, we’ll see one of the ways to implement a Light & Dark theme in a NextJS application using CSS variables."

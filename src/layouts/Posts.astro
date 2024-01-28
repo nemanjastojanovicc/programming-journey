@@ -3,8 +3,8 @@ import { Picture } from "astro-imagetools/components";
 
 import dateFormat from "@lib/utils/dateFormat";
 import { humanize, slugify } from "@lib/utils/textConverter";
-import DateEvent from '@svgs/DateEvent.astro';
 import Category from "@svgs/Category.astro";
+import DateEvent from '@svgs/DateEvent.astro';
 
 import Tags from "./components/Tags.astro";
 
@@ -17,7 +17,7 @@ const { className, posts } = Astro.props;
     posts.map((post: any) => (
       <div class="w-full grid grid-cols-5 gap-8">
         {post.data.image && (
-          <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-2 order-1 lg:order-none rounded-lg hover:text-primary overflow-hidden group flex items-center">
+          <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-2 order-1 lg:order-none hover:text-primary overflow-hidden group flex items-center">
             <Picture
               src={post.data.image}
               alt={post.data.title}
@@ -26,11 +26,11 @@ const { className, posts } = Astro.props;
           </a>
         )}
         <div class="w-full col-span-full flex flex-col gap-4 lg:col-span-3">
-          <h2>
+          <b class="text-dark text-3xl">
             <a href={`/programming-journey/${post.slug}`} class="block hover:text-primary transition duration-300">
               {post.data.title}
             </a>
-          </h2>
+          </b>
           <ul class="flex flex-wrap items-center text-text">
             <li class="mr-5 flex items-center flex-wrap font-medium gap-1">
               <DateEvent />

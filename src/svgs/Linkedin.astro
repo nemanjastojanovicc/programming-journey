@@ -4,15 +4,29 @@ const { className, fill = "white" } = Astro.props;
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.1"
+  width="16"
+  height="16"
   fill={fill}
-  height="20"
-  width="20"
-  viewBox="0 0 512 512"
+  viewBox="0 0 256 256"
+  xml:space="preserve"
   class={className}
 >
-  <circle cx="142" cy="138" r="37"></circle>
-  <path stroke="#fff" stroke-width="66" d="M244 194v198M142 194v198"></path>
-  <path
-    d="M276 282c0-20 13-40 36-40 24 0 33 18 33 45v105h66V279c0-61-32-89-76-89-34 0-51 19-59 32"
-  ></path>
+  <defs> </defs>
+  <g
+    style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10;"
+    transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+  >
+    <path
+      d="M 1.48 29.91 h 18.657 v 60.01 H 1.48 V 29.91 z M 10.809 0.08 c 5.963 0 10.809 4.846 10.809 10.819 c 0 5.967 -4.846 10.813 -10.809 10.813 C 4.832 21.712 0 16.866 0 10.899 C 0 4.926 4.832 0.08 10.809 0.08"
+      style=`stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: ${fill};`
+      transform=" matrix(1 0 0 1 0 0) "
+      stroke-linecap="round"></path>
+    <path
+      d="M 31.835 29.91 h 17.89 v 8.206 h 0.255 c 2.49 -4.72 8.576 -9.692 17.647 -9.692 C 86.514 28.424 90 40.849 90 57.007 V 89.92 H 71.357 V 60.737 c 0 -6.961 -0.121 -15.912 -9.692 -15.912 c -9.706 0 -11.187 7.587 -11.187 15.412 V 89.92 H 31.835 V 29.91 z"
+      style=`stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: ${fill};`
+      transform=" matrix(1 0 0 1 0 0) "
+      stroke-linecap="round"></path>
+  </g>
 </svg>
