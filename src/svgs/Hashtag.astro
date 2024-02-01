@@ -1,12 +1,12 @@
 ---
-const { className } = Astro.props;
+const { className, size = 18 } = Astro.props;
 ---
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  height="18"
+  height={size}
   viewBox="0 -960 960 960"
-  width="18"
+  width={size}
   class={className}
   ><path
     d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"

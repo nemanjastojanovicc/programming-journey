@@ -1,4 +1,7 @@
 ---
+import config from "@config/config.json";
+
+const { base_path } = config.site;
 const { section, currentPage, totalPages } = Astro.props;
 
 const indexPageLink = currentPage === 2;
@@ -9,6 +12,11 @@ let pageList = [];
 for (let i = 1; i <= totalPages; i++) {
   pageList.push(i);
 }
+
+const prevPageLink = indexPageLink ? `${section ? "/" + section : ""}` : `${section ? "/" + section : ""}/page/${currentPage - 1}`;
+const generatePageLink = (pagination: number, index: number) =>
+  index === 0 ? `${section ? "/" + section : ""}` : `${section ? "/" + section : ""}/page/${pagination}`
+const nextPageLink = `${base_path}${section ? "/" + section : ""}/page/${currentPage + 1}`
 ---
 
 {
@@ -17,11 +25,7 @@ for (let i = 1; i <= totalPages; i++) {
       {/* previous */}
       {hasPrevPage ? (
         <a
-          href={
-            indexPageLink
-              ? `${section ? "/" + section : "/"}`
-              : `${section ? "/" + section : ""}/page/${currentPage - 1}`
-          }
+          href={`${base_path}${prevPageLink}`}
           class="border border-primary hover:bg-primary hover:text-white rounded-md h-10 w-10 leading-[36px] font-semibold text-dark flex items-center justify-center transition duration-200"
         >
           <span class="sr-only">Previous</span>
@@ -69,11 +73,7 @@ for (let i = 1; i <= totalPages; i++) {
           </span>
         ) : (
           <a
-            href={
-              i === 0
-                ? `${section ? "/" + section : "/"}`
-                : `${section ? "/" + section : ""}/page/${pagination}`
-            }
+            href={`${base_path}${generatePageLink(pagination, i)}`}
             aria-current="page"
             class={`border border-primary hover:bg-primary hover:text-white rounded-md h-10 w-10 leading-[36px] font-semibold text-dark flex items-center justify-center transition duration-200`}
           >
@@ -85,7 +85,7 @@ for (let i = 1; i <= totalPages; i++) {
       {/* next page */}
       {hasNextPage ? (
         <a
-          href={`${section ? "/" + section : ""}/page/${currentPage + 1}`}
+          href={nextPageLink}
           class="border border-primary hover:bg-primary hover:text-white rounded-md h-10 w-10 leading-[36px] font-semibold text-dark flex items-center justify-center transition duration-200"
         >
           <span class="sr-only">Next</span>

@@ -1,11 +1,11 @@
 ---
-const { className, fill = "white" } = Astro.props;
+const { className, fill = "white", size = 24 } = Astro.props;
 ---
 
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  height="24"
-  width="24"
+  height={size}
+  width={size}
   viewBox="0 0 512 512"
   class={className}
 >

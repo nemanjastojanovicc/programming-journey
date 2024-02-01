@@ -1,5 +1,6 @@
 ---
 import config from "@config/config.json";
+import Facebook from "@svgs/Facebook.astro";
 import Linkedin from "@svgs/Linkedin.astro";
 import Twitter from "@svgs/Twitter.astro";
 
@@ -9,7 +10,7 @@ const { title, description, slug, className } = Astro.props;
 const final_url = `${base_url}/${base_path}/${slug}`;
 ---
 
-<ul class={`${className}`}>
+<ul class={className}>
   <li class="inline-block">
     <a
       aria-label="facebook share button"
@@ -17,7 +18,7 @@ const final_url = `${base_url}/${base_path}/${slug}`;
       target="_blank"
       rel="noreferrer noopener"
     >
-      <Twitter />
+      <Facebook fill="#747577" />
     </a>
   </li>
   <li class="inline-block">
