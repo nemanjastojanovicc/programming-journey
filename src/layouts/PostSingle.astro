@@ -23,13 +23,13 @@ const { title, description, categories, date, tags } = post.data;
   <div class="container">
     <article class="row justify-center">
       <div class="text-center md:col-10">
-        <h1 set:html={markdownify(title)} class="h2" />
+        <h1 transition:name={`title-${post.slug}`} set:html={markdownify(title)} class="h2" />
         <ul class="mt-4 flex flex-wrap items-center justify-center text-text">
-          <li class="mx-3 flex flex-wrap items-center gap-1 font-medium">
+          <li transition:name={`date-${post.slug}`} class="mx-3 flex flex-wrap items-center gap-1 font-medium">
             <DateEvent />
             <>{dateFormat(date)}</>
           </li>
-          <li class="mx-3 flex flex-wrap items-center gap-1">
+          <li transition:name={`category-${post.slug}`} class="mx-3 flex flex-wrap items-center gap-1">
             <Category />
             <>
               <ul>
@@ -56,15 +56,18 @@ const { title, description, categories, date, tags } = post.data;
 
       <div class="md:col-10">
         <div class="content mb-16 text-left">
-          <p class="text-text">
+          <p transition:name={`description-${post.slug}`} class="text-text">
             {post.data.description}
           </p>
 
-          <Picture
-            src={post.data.image}
-            alt={post.data.title}
-            placeholder="dominantColor"
-          />
+          <div transition:name={`hero-${post.slug}`}>
+
+            <Picture
+              src={post.data.image}
+              alt={post.data.title}
+              placeholder="dominantColor"
+            />
+          </div>
           <Content />
         </div>
         <div class="flex flex-wrap items-center justify-between">

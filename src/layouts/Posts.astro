@@ -18,25 +18,28 @@ const { className, posts } = Astro.props;
       <div class="w-full grid grid-cols-5 gap-8">
         {post.data.image && (
           <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-2 hover:text-primary overflow-hidden group flex items-center">
-            <Picture
-              src={post.data.image}
-              alt={post.data.title}
-              placeholder="dominantColor"
-            />
+            <div transition:name={`hero-${post.slug}`}>
+            
+              <Picture
+                src={post.data.image}
+                alt={post.data.title}
+                placeholder="dominantColor"
+              />
+              </div>
           </a>
         )}
         <div class="w-full col-span-full flex flex-col gap-4 lg:col-span-3">
           <b class="text-dark text-3xl">
-            <a href={`/programming-journey/${post.slug}`} class="block hover:text-primary transition duration-300">
+            <a transition:name={`title-${post.slug}`} href={`/programming-journey/${post.slug}`} class="block hover:text-primary transition duration-300">
               {post.data.title}
             </a>
           </b>
           <ul class="flex flex-wrap items-center text-text">
-            <li class="mr-5 flex items-center flex-wrap font-medium gap-1">
+            <li transition:name={`date-${post.slug}`} class="mr-5 flex items-center flex-wrap font-medium gap-1">
               <DateEvent />
               <p class="mt-1">{dateFormat(post.data.date)}</p>
             </li>
-            <li class="mr-5 flex items-center flex-wrap gap-1">
+            <li transition:name={`category-${post.slug}`} class="mr-5 flex items-center flex-wrap gap-1">
               <Category />
               <>
                 <ul class="mt-1">
@@ -54,7 +57,7 @@ const { className, posts } = Astro.props;
               </>
             </li>
           </ul>
-          <p class="text-text mb-8 md:mb-2">
+          <p transition:name={`description-${post.slug}`} class="text-text mb-8 md:mb-2">
             {post.data.description}
           </p>
           <Tags className="hidden md:flex" tags={post.data.tags} />
