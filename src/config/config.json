@@ -1,11 +1,11 @@
 {
   "site": {
-    "title": "Programming Journey",
+    "title": "Nemca Blog",
     "base_url": "https://nemanjastojanovicc.github.io",
     "base_path": "/programming-journey",
     "trailing_slash": false,
     "favicon": "/programming-journey/images/favicon.svg",
-    "logo_text": "Programming Journey"
+    "logo_text": "Nemca Blog"
   },
 
   "settings": {

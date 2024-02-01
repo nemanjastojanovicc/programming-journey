@@ -1,7 +1,7 @@
 ---
 title: "Optimistic Updates in Tanstack Query V5"
 date: 2023-12-21T09:51:02+01:00
-image: "/src/images/posts/03-optimistic-updates/optimistic-main.png"
+image: "/images/posts/03-optimistic-updates/optimistic-main.png"
 draft: false
 categories: ["react"]
 tags: ["tanstack query", "react", "javascript"]

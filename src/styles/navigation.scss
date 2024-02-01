@@ -1,12 +1,3 @@
-// navbar toggler
-input#nav-toggle:checked ~ label#show-button {
-  @apply hidden;
-}
-
-input#nav-toggle:checked ~ label#hide-button {
-  @apply flex md:hidden;
-}
-
 input#nav-toggle:checked ~ #nav-menu {
   @apply block md:flex;
 }
@@ -25,7 +16,7 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 .nav-link {
-  @apply p-3 text-lg font-semibold text-dark transition hover:text-primary md:p-4;
+  @apply text-lg font-semibold text-dark transition hover:text-primary;
 }
 
 .nav-dropdown-list {

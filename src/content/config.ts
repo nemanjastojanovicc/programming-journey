@@ -2,7 +2,6 @@ import { defineCollection, z } from "astro:content";
 
 //TODO: add appUri
 
-// Post collection schema
 const postsCollection = defineCollection({
   schema: z.object({
     id: z.string().optional(),
@@ -17,7 +16,6 @@ const postsCollection = defineCollection({
   }),
 });
 
-// Pages collection schema
 const pagesCollection = defineCollection({
   schema: z.object({
     id: z.string().optional(),
@@ -30,7 +28,6 @@ const pagesCollection = defineCollection({
   }),
 });
 
-// Export collections
 export const collections = {
   posts: postsCollection,
   pages: pagesCollection,

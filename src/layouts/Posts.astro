@@ -17,7 +17,7 @@ const { className, posts } = Astro.props;
     posts.map((post: any) => (
       <div class="w-full grid grid-cols-5 gap-8">
         {post.data.image && (
-          <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-2 order-1 lg:order-none hover:text-primary overflow-hidden group flex items-center">
+          <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-2 hover:text-primary overflow-hidden group flex items-center">
             <Picture
               src={post.data.image}
               alt={post.data.title}
@@ -54,10 +54,10 @@ const { className, posts } = Astro.props;
               </>
             </li>
           </ul>
-          <p class="text-text">
+          <p class="text-text mb-8 md:mb-2">
             {post.data.description}
           </p>
-          <Tags tags={post.data.tags} />
+          <Tags className="hidden md:flex" tags={post.data.tags} />
         </div>
       </div>
     ))

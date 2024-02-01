@@ -2,11 +2,11 @@
 import config from "@config/config.json";
 import { humanize, slugify } from "@lib/utils/textConverter";
 
-const { tags } = Astro.props;
+const { tags, className } = Astro.props;
 const { base_path } = config.site;
 ---
 
-<ul class="mb-4 mr-4 flex flex-col gap-3 sm:flex-row">
+<ul class=`mb-4 mr-4 flex flex-col gap-3 sm:flex-row ${className}`>
   {
     tags.map((tag: string) => (
       <li class="inline-block">
