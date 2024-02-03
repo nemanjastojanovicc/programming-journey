@@ -17,14 +17,13 @@ const { className, posts } = Astro.props;
     posts.map((post: any) => (
       <div class="w-full grid grid-cols-5 gap-8">
         {post.data.image && (
-          <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-2 hover:text-primary overflow-hidden group flex items-center">
+          <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-2 hover:text-primary overflow-hidden group flex items-center rounded-lg">
             <div transition:name={`hero-${post.slug}`}>
-            
-              <Picture
-                src={post.data.image}
-                alt={post.data.title}
-                placeholder="dominantColor"
-              />
+                <Picture
+                  src={post.data.image}
+                  alt={post.data.title}
+                  placeholder="dominantColor"
+                />
               </div>
           </a>
         )}
