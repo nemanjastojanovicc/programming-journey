@@ -5,8 +5,8 @@ author: "Nemca Dev"
 categories: ["astro"]
 image: "/images/posts/05-astro/astro-main-v1.png"
 tags: ["typescript"]
-draft: true
-description: "Astro first look..."
+draft: false
+description: "Coming soon..."
 ---
 
-Hello from Astro
+Coming soon...

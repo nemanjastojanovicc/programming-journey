@@ -5,7 +5,7 @@ import { getTaxonomy } from "@lib/taxonomyParser.astro";
 
 const categories = await getTaxonomy("posts", "categories");
 
-const CATEGORIES = {
+export const CATEGORIES = {
   astro: {
     imageUrl:
       "https://astro-build.gallerycdn.vsassets.io/extensions/astro-build/astro-vscode/2.6.2/1704781732029/Microsoft.VisualStudio.Services.Icons.Default",
@@ -31,11 +31,13 @@ const CATEGORIES = {
       <div class="book-wrapper flex-col items-center md:flex-row">
         {
           categories.map((category) => (
-            <Book
-              link={`/programming-journey/categories/${category}`}
-              imageUrl={CATEGORIES[category].imageUrl}
-              imageAlt={CATEGORIES[category].imageAlt}
-            />
+            <div transition:name={`book-${category}`} class="w-fit">
+              <Book
+                link={`/programming-journey/categories/${category}`}
+                imageUrl={CATEGORIES[category].imageUrl}
+                imageAlt={CATEGORIES[category].imageAlt}
+              />
+            </div>
           ))
         }
       </div>

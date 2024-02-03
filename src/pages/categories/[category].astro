@@ -1,10 +1,12 @@
 ---
 import Base from "@layouts/Base.astro";
 import Posts from "@layouts/Posts.astro";
+import Book from "@layouts/components/Book.astro";
 import { getSinglePage } from "@lib/contentParser.astro";
 import { getTaxonomy } from "@lib/taxonomyParser.astro";
 import taxonomyFilter from "@lib/utils/taxonomyFilter";
 import { humanize } from "@lib/utils/textConverter";
+import { CATEGORIES } from "./index.astro";
 
 export async function getStaticPaths() {
   const categories = await getTaxonomy("posts", "categories");
@@ -26,9 +28,16 @@ const title = humanize(category || "");
 
 <Base title={title || "Category"}>
   <div class="section">
-    <div>
-      <h1 class="h2 page-heading mb-16 text-center">{title}</h1>
-      <Posts posts={filterByCategory} fluid={false} />
+    <div class="mb-16 flex justify-center">
+      <div transition:name={`book-${category}`}>
+        <Book
+          link={`/programming-journey/categories`}
+          imageUrl={CATEGORIES[category].imageUrl}
+          imageAlt={CATEGORIES[category].imageAlt}
+          isOpened
+        />
+      </div>
     </div>
+    <Posts posts={filterByCategory} fluid={false} />
   </div>
 </Base>

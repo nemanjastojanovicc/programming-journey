@@ -1,12 +1,12 @@
 ---
-const { imageUrl, imageAlt, link } = Astro.props;
+const { imageUrl, imageAlt, link, isOpened = true } = Astro.props;
 ---
 
 <a class="book-items" href={link}>
   <div class="main-book-wrap">
     <div class="book-cover">
       <div class="book-inside"></div>
-      <div class="book-image">
+      <div class=`book-image ${isOpened ? 'book-image--open' : ''}`>
         <img src={imageUrl} alt={imageAlt} />
         <div class="effect"></div>
         <div class="light"></div>
@@ -81,7 +81,8 @@ const { imageUrl, imageAlt, link } = Astro.props;
     border-radius: 2px 6px 6px 2px;
   }
 
-  .book-image:hover {
+  .book-image:hover,
+  .book-image--open {
     transform: perspective(2000px) rotateY(-15deg) translateX(-10px)
       scaleX(0.94) !important;
     box-shadow: 6px 6px 18px -2px rgba(0, 0, 0, 0.2),
