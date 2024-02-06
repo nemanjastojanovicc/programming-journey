@@ -12,12 +12,12 @@ import Tags from "./components/Tags.astro";
 const { className, posts } = Astro.props;
 ---
 
-<div class={`grid grid-cols-1 max-w-8xl px-8 gap-4 mx-auto lg:max-w-7xl ${className} ${posts.length == 1 ? "justify-center" : ""} `}>
+<div class={`grid grid-cols-1 max-w-8xl px-8 gap-6 mx-auto lg:max-w-6xl ${className} ${posts.length == 1 ? "justify-center" : ""} `}>
   {
     posts.map((post: any) => (
-      <div class="w-full grid grid-cols-5 gap-8">
+      <div class="w-full grid grid-cols-7 gap-4 lg:gap-8">
         {post.data.image && (
-          <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-2 hover:text-primary overflow-hidden group flex items-center rounded-lg">
+          <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-3 hover:text-primary overflow-hidden group flex items-center rounded-lg">
             <div transition:name={`hero-${post.slug}`}>
                 <Picture
                   src={post.data.image}
@@ -27,8 +27,8 @@ const { className, posts } = Astro.props;
               </div>
           </a>
         )}
-        <div class="w-full col-span-full flex flex-col gap-4 lg:col-span-3">
-          <b class="text-dark text-3xl">
+        <div class="w-full col-span-full flex flex-col gap-4 lg:col-span-4">
+          <b class="text-dark text-lg md:text-xl lg:text-h4">
             <a transition:name={`title-${post.slug}`} href={`/programming-journey/${post.slug}`} class="block hover:text-primary transition duration-300">
               {post.data.title}
             </a>
