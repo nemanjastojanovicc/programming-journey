@@ -1,6 +1,6 @@
 ---
 title: "Simple Approach to Create Data Table in React"
-date: 2023-12-21T09:48:53+01:00
+date: 2023-10-15T09:48:53+01:00
 draft: false
 description: "In this story we will try to create a reusable DataTable component using a simple way to pass the data and configure the table. 🚀 "
 image: "/images/posts/02-react-data-table/final-table.png"

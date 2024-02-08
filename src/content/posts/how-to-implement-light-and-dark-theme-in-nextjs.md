@@ -1,6 +1,6 @@
 ---
 title: "How to Implement Light and Dark Theme in Nextjs"
-date: 2023-12-04T05:00:00Z
+date: 2023-11-26T05:00:00Z
 author: "Nemca Dev"
 categories: ["next"]
 image: "/images/posts/04-light-dark/light-dark-main.png"

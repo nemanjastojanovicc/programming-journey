@@ -1,6 +1,6 @@
 ---
 title: "Simplifying Code Complexity with Pipe Method"
-date: 2023-11-22T16:55:24+01:00
+date: 2023-09-30T16:55:24+01:00
 draft: false
 description: "JavaScript offers us a powerful tool to break down complex functions into smaller, manageable pieces. In this story, we’ll explore the pipe method and demonstrate its benefits through a real-world scenario."
 image: "/images/posts/01-pipe-method/final-pipe.png"
