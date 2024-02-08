@@ -12,7 +12,7 @@ import Tags from "./components/Tags.astro";
 const { className, posts } = Astro.props;
 ---
 
-<div class={`grid grid-cols-1 max-w-8xl px-8 gap-6 mx-auto lg:max-w-6xl ${className} ${posts.length == 1 ? "justify-center" : ""} `}>
+<div class={`grid grid-cols-1 max-w-8xl px-8 gap-6 mx-auto lg:max-w-6xl ${className}`}>
   {
     posts.map((post: any) => (
       <div class="w-full grid grid-cols-7 gap-4 lg:gap-8">
