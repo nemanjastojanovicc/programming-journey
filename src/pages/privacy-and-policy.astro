@@ -1,0 +1,19 @@
+---
+import Base from "@layouts/Base.astro";
+import { getEntryBySlug } from "astro:content";
+
+const entry = await getEntryBySlug("pages", "privacy-and-policy");
+const { Content } = await entry.render();
+---
+
+<Base title="Privacy and Policy">
+  <section class="section">
+    <div class="container">
+      <article class="row justify-center">
+        <div class="content mb-16 text-left">
+          <Content />
+        </div>
+      </article>
+    </div>
+  </section>
+</Base>

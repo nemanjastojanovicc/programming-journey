@@ -108,7 +108,7 @@ const finalUrl = `${config.site.base_url}${config.site.base_path}`;
       content={`${finalUrl}${image ? image : config.metadata.meta_image}`}
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <ViewTransitions fallback="swap" />
+    <ViewTransitions fallback="animate" />
   </head>
   <body>
     <TwSizeIndicator />
