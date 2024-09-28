@@ -3,19 +3,23 @@ import Base from "@layouts/Base.astro";
 import Book from "@layouts/components/Book.astro";
 import { getTaxonomy } from "@lib/taxonomyParser.astro";
 
+import astroLogo from "./images/astro-logo.png";
+import nextLogo from "./images/next-logo.png";
+import reactLogo from "./images/react-logo.png";
+
 const categories = await getTaxonomy("posts", "categories");
 
 export const CATEGORIES = {
   astro: {
-    imageUrl: "public/images/categories/astro-logo.png",
+    imageUrl: astroLogo,
     imageAlt: "Astro Book",
   },
   next: {
-    imageUrl: "public/images/categories/next-logo.png",
+    imageUrl: nextLogo,
     imageAlt: "NextJS Book",
   },
   react: {
-    imageUrl: "public/images/categories/react-logo.png",
+    imageUrl: reactLogo,
     imageAlt: "React Book",
   },
 };

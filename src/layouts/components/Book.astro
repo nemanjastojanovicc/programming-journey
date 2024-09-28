@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 const { imageUrl, imageAlt, link, isOpened = true } = Astro.props;
 ---
 
@@ -7,7 +9,7 @@ const { imageUrl, imageAlt, link, isOpened = true } = Astro.props;
     <div class="book-cover">
       <div class="book-inside"></div>
       <div class=`book-image ${isOpened ? 'book-image--open' : ''}`>
-        <img src={imageUrl} alt={imageAlt} />
+        <Image src={imageUrl} alt={imageAlt} />
         <div class="effect"></div>
         <div class="light"></div>
       </div>
