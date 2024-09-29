@@ -4,51 +4,68 @@ import { Picture } from "astro-imagetools/components";
 import dateFormat from "@lib/utils/dateFormat";
 import { humanize, slugify } from "@lib/utils/textConverter";
 import Category from "@svgs/Category.astro";
-import DateEvent from '@svgs/DateEvent.astro';
+import DateEvent from "@svgs/DateEvent.astro";
 
 import Tags from "./components/Tags.astro";
-
 
 const { className, posts } = Astro.props;
 ---
 
-<div class={`grid grid-cols-1 max-w-8xl px-8 gap-6 mx-auto lg:max-w-6xl ${className}`}>
+<div
+  class={`grid grid-cols-1 max-w-8xl px-8 gap-6 mx-auto lg:max-w-6xl ${className}`}
+>
   {
     posts.map((post: any) => (
-      <div class="w-full grid grid-cols-7 gap-4 lg:gap-8">
+      <div class="grid w-full grid-cols-7 gap-4 lg:gap-8">
         {post.data.image && (
-          <a href={`/programming-journey/${post.slug}`} class="w-full col-span-full lg:col-span-3 hover:text-primary overflow-hidden group flex items-center rounded-lg">
+          <a
+            href={`/programming-journey/${post.slug}`}
+            class="group col-span-full flex w-full items-center overflow-hidden rounded-lg hover:text-primary lg:col-span-3"
+          >
             <div transition:name={`hero-${post.slug}`}>
-                <Picture
-                  src={post.data.image}
-                  alt={post.data.title}
-                  placeholder="dominantColor"
-                />
-              </div>
+              <Picture
+                src={post.data.image}
+                alt={post.data.title}
+                placeholder="dominantColor"
+              />
+            </div>
           </a>
         )}
-        <div class="w-full col-span-full flex flex-col gap-4 lg:col-span-4">
-          <b class="text-dark text-lg md:text-xl lg:text-h4">
-            <a transition:name={`title-${post.slug}`} href={`/programming-journey/${post.slug}`} class="block hover:text-primary transition duration-300">
+        <div class="col-span-full flex w-full flex-col gap-4 lg:col-span-4">
+          <b class="text-lg text-dark md:text-xl lg:text-h4">
+            <a
+              transition:name={`title-${post.slug}`}
+              href={`/programming-journey/${post.slug}`}
+              class="block transition duration-300 hover:text-primary"
+            >
               {post.data.title}
             </a>
           </b>
           <ul class="flex flex-wrap items-center text-text">
-            <li transition:name={`date-${post.slug}`} class="mr-5 flex items-center flex-wrap font-medium gap-1">
+            <li
+              transition:name={`date-${post.slug}`}
+              class="mr-5 flex flex-wrap items-center gap-1 font-medium"
+            >
               <DateEvent />
               <p class="mt-1">{dateFormat(post.data.date)}</p>
             </li>
-            <li transition:name={`category-${post.slug}`} class="mr-5 flex items-center flex-wrap gap-1">
+            <li
+              transition:name={`category-${post.slug}`}
+              class="mr-5 flex flex-wrap items-center gap-1"
+            >
               <Category />
               <>
                 <ul class="mt-1">
                   {post.data.categories.map((category: string, i: number) => (
                     <li class="inline-block">
                       <a
-                        href={`/programming-journey/categories/${slugify(category)}`}
-                        class="mr-2 hover:text-primary font-medium"
+                        href={`/programming-journey/categories/${slugify(
+                          category
+                        )}`}
+                        class="mr-2 font-medium hover:text-primary"
                       >
-                        {humanize(category)}{i !== post.data.categories.length - 1 && ","}
+                        {humanize(category)}
+                        {i !== post.data.categories.length - 1 && ","}
                       </a>
                     </li>
                   ))}
@@ -56,7 +73,10 @@ const { className, posts } = Astro.props;
               </>
             </li>
           </ul>
-          <p transition:name={`description-${post.slug}`} class="text-text mb-8 md:mb-2">
+          <p
+            transition:name={`description-${post.slug}`}
+            class="mb-8 text-text md:mb-2"
+          >
             {post.data.description}
           </p>
           <Tags className="hidden md:flex" tags={post.data.tags} />

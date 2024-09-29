@@ -1,7 +1,6 @@
 ---
 import { Picture } from "astro-imagetools/components";
 
-import Quiz from "@components/Quiz.astro";
 import Share from "@components/Share.astro";
 import SimilarPosts from "@components/SimilarPosts.astro";
 import Tags from "@components/Tags.astro";
@@ -23,13 +22,23 @@ const { title, description, categories, date, tags } = post.data;
   <div class="container">
     <article class="row justify-center">
       <div class="text-center md:col-10">
-        <h1 transition:name={`title-${post.slug}`} set:html={markdownify(title)} class="h2" />
+        <h1
+          transition:name={`title-${post.slug}`}
+          set:html={markdownify(title)}
+          class="h2"
+        />
         <ul class="mt-4 flex flex-wrap items-center justify-center text-text">
-          <li transition:name={`date-${post.slug}`} class="mx-3 flex flex-wrap items-center gap-1 font-medium">
+          <li
+            transition:name={`date-${post.slug}`}
+            class="mx-3 flex flex-wrap items-center gap-1 font-medium"
+          >
             <DateEvent />
             <>{dateFormat(date)}</>
           </li>
-          <li transition:name={`category-${post.slug}`} class="mx-3 flex flex-wrap items-center gap-1">
+          <li
+            transition:name={`category-${post.slug}`}
+            class="mx-3 flex flex-wrap items-center gap-1"
+          >
             <Category />
             <>
               <ul>
